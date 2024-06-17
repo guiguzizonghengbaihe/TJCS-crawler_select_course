@@ -1,2 +1,2 @@
-# TJCS-crawler_select_course
-同济大学选课crawler教程
+# TJCS-script_select_course
+一个繁琐的同济大学选课script制作教程
