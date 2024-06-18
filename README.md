@@ -1,4 +1,4 @@
-# TJCS-script_select_course
+# TJCS-Script_SelectCourse
 同济大学选课脚本教程
 # 原理
 通过前端操作获取所需请求报文，用python不断向目标网站发送请求
