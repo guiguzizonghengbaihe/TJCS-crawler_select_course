@@ -1,7 +1,5 @@
 # TJCS-script_select_course
-一个繁琐的同济大学个人选课脚本制作/使用教程
-# 前言
-本方法有门槛但技术性较低，不需要分析加密和获取密钥，比较麻烦，局限性交大，可以作为Web初学者练手和理解，同时限制大范围使用和黄牛
+同济大学选课脚本教程
 # 原理
 通过前端操作获取所需请求报文，用python不断向目标网站发送请求
 # 操作
@@ -35,17 +33,14 @@ if(response.text == '{"message":"sessionid is not exist."}'):
     exit()
 while True:
     response = requests.post(url, json=data, headers=headers)
-    if(response.text == '{"message":"sessionid is not exist."}'):
-        print("X-Token is wrong")
-        exit()
+    # if(response.text == '{"message":"sessionid is not exist."}'):
+    #     print("X-Token is wrong")
+    #     exit()
 ```
 
 5. 运行。注意运行过程中用来获取信息的浏览器不要关闭再重新打开，只是关闭是可以的，想看信息用另外一个浏览器，在另一个浏览器操作是不影响的，但如果想保存其他有名额的课的话记得先把现在的脚本停下来
 # 注意事项、Tips等
 
-1. 该脚本或许有风险（比如误操导致掉了已经选好的课），另外不会用我也不会回答你（应该也问不到我），所以对选课系统逻辑比较了解/有些研究/对Web有些基础再来用吧
-2. 请只操作自己的账户，当然应该也只能操作自己的账户
-3. 不要宣传，自己学学就行了（虽然这写得很烂应该也没人看）
-4. 如果返回“{"message":"sessionid is not exist."}”或显示“X-Token is wrong”代表浏览器变更了，重新获取X-Token就行，data不分可改可不改
-5. 保存的时候可以不止一门课，也就是说可以一次同时传好几个课的请求也可以分几个脚本选不同的课
-6. 已经简化掉了不必要的请求头，如果出现问题试着全加上去看看
+1. 如果返回“{"message":"sessionid is not exist."}”或显示“X-Token is wrong”代表浏览器变更了，重新获取X-Token就行，data不分可改可不改
+2. 保存的时候可以不止一门课，也就是说可以一次同时传好几个课的请求也可以分几个脚本选不同的课
+3. 已经简化掉了不必要的请求头，如果出现问题看看原始的请求头
